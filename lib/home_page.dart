@@ -26,6 +26,45 @@ class _MyHomePageState extends State<MyHomePage> {
     'Закуски',
   ];
 
+  final Map<String, List<Product>> _products = {
+    'Черный кофе': [
+      Product(name: 'Эспрессо', imageUrl: 'assets/images/coffee.png', price: '100 руб'),
+      Product(name: 'Американо', imageUrl: 'assets/images/coffee.png', price: '110 руб'),
+      Product(name: 'Ристретто', imageUrl: 'assets/images/coffee.png', price: '120 руб'),
+      Product(name: 'Лунго', imageUrl: 'assets/images/coffee.png', price: '130 руб'),
+    ],
+    'Кофе с молоком': [
+      Product(name: 'Латте', imageUrl: 'assets/images/coffee.png', price: '150 руб'),
+      Product(name: 'Капучино', imageUrl: 'assets/images/coffee.png', price: '140 руб'),
+      Product(name: 'Мокачино', imageUrl: 'assets/images/coffee.png', price: '160 руб'),
+      Product(name: 'Флет Уайт', imageUrl: 'assets/images/coffee.png', price: '170 руб'),
+    ],
+    'Чай': [
+      Product(name: 'Зеленый чай', imageUrl: 'assets/images/coffee.png', price: '90 руб'),
+      Product(name: 'Черный чай', imageUrl: 'assets/images/coffee.png', price: '80 руб'),
+      Product(name: 'Чай с бергамотом', imageUrl: 'assets/images/coffee.png', price: '95 руб'),
+      Product(name: 'Белый чай', imageUrl: 'assets/images/coffee.png', price: '100 руб'),
+    ],
+    'Авторские напитки': [
+      Product(name: 'Матча латте', imageUrl: 'assets/images/coffee.png', price: '200 руб'),
+      Product(name: 'Тыквенный латте', imageUrl: 'assets/images/coffee.png', price: '210 руб'),
+      Product(name: 'Ванильный раф', imageUrl: 'assets/images/coffee.png', price: '220 руб'),
+      Product(name: 'Карамельный маккиато', imageUrl: 'assets/images/coffee.png', price: '230 руб'),
+    ],
+    'Десерты': [
+      Product(name: 'Чизкейк', imageUrl: 'assets/images/coffee.png', price: '159 руб'),
+      Product(name: 'Эклер', imageUrl: 'assets/images/coffee.png', price: '99 руб'),
+      Product(name: 'Тирамису', imageUrl: 'assets/images/coffee.png', price: '149 руб'),
+      Product(name: 'Панна-котта', imageUrl: 'assets/images/coffee.png', price: '129 руб'),
+    ],
+    'Закуски': [
+      Product(name: 'Круассан', imageUrl: 'assets/images/coffee.png', price: '79 руб'),
+      Product(name: 'Сэндвич с ветчиной', imageUrl: 'assets/images/coffee.png', price: '99 руб'),
+      Product(name: 'Багет с курицей', imageUrl: 'assets/images/coffee.png', price: '119 руб'),
+      Product(name: 'Панини с сыром', imageUrl: 'assets/images/coffee.png', price: '129 руб'),
+    ],
+  };
+
   @override
   void initState() {
     super.initState();
@@ -187,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 section,
                                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                               ),
-                              Placeholder(),
+                              ProductList(products: _products[section]!),
                             ],
                           ),
                         );
