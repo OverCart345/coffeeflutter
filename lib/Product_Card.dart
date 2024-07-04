@@ -24,7 +24,7 @@ class _ProductCardState extends State<ProductCard> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            child: Image.network(
+            child: Image.asset(
               widget.product.imageUrl,
               fit: BoxFit.cover,
               height: 100,
@@ -105,8 +105,10 @@ class _ProductCardState extends State<ProductCard> {
                         backgroundColor: const Color.fromARGB(255, 152, 199, 221),
                         minimumSize: Size(130, 35),
                       ),
-                      child: Text(widget.product.price,
-                        style: TextStyle(color: Colors.white),),
+                      child: Text(
+                        widget.product.price,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
             ),
           ),
